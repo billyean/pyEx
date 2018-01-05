@@ -12,5 +12,5 @@ pip3 install scipy numpy
 
 ## Introduction
 
-* [intro.py](introdution/intro.py)
-* [tour.py](introdution/tour.py)
+* [basic.py](introduction/basic.py)
+* [tour.py](introduction/tour.py)
