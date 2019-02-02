@@ -18,7 +18,7 @@ print(f"{bolivars_value} Venezuelan Bolivars has same value as {us_dollars_value
 # How many Bolivars you would need to have today to live for the next 3 years if you require $12,060 (US) per year.
 living_standard = 12060
 period = 3
-bolivars_required = exchange(living_standard * period * us_dollars_value, us_dollar_value_per_bolivar)
+bolivars_required = exchange(living_standard * period, 1.0 / us_dollar_value_per_bolivar)
 print(f"You need {bolivars_required:2f} Venezuelan Bolivars for three years when you live with {living_standard} us dollars a year.")
 
 # Task 3 Answer
