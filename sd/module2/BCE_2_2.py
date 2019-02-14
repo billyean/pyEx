@@ -19,7 +19,7 @@ print(f"{bolivars_value} Venezuelan Bolivars has same value as {us_dollars_value
 living_standard = 12060
 period = 3
 bolivars_required = exchange(living_standard * period, 1.0 / us_dollar_value_per_bolivar)
-print(f"You need {bolivars_required:2f} Venezuelan Bolivars for three years when you live with {living_standard} us dollars a year.")
+print(f"You need {bolivars_required:.2f} Venezuelan Bolivars for three years when you live with {living_standard:.2f} us dollars a year.")
 
 # Task 3 Answer
 # How many minutes there will be in the next 3 years, if there are 365.2425 days in a year. Calculate how many Bolivars
