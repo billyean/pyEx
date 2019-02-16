@@ -5,7 +5,7 @@ List of implementation code
 * [X] [Module 2 Team Exercise](./module2)
 * [X] [Module 3 Team Exercise](./module3)
 * [X] [Module 4 Team Exercise](./module4)
-* [ ] Module 5 Team Exercise
+* [X] [Module 5 Team Exercise](./module5)
 * [ ] Module 6 Team Exercise
 * [ ] Module 7 Team Exercise
 * [ ] Module 8 Team Exercise
