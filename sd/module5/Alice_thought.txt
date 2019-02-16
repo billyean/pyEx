@@ -1,0 +1,10 @@
+Alice thought the whole thing very absurd, but they all looked so grave
+Alice thought she might as well wait, as she had nothing else to do, and
+Alice remained looking thoughtfully at the mushroom for a minute, trying
+Alice was more and more puzzled, but she thought there was no use in
+Alice thought decidedly uncivil. ‘But perhaps he can’t help it,’ she
+Alice did not at all like the tone of this remark, and thought it would
+Alice thought she might as well go back, and see how the game was going
+Alice was very glad to find her in such a pleasant temper, and thought
+File plain_story.txt has 64 lines that start with Alice
+File plain_story.txt has 8 lines that start with Alice and contain thought

@@ -14,7 +14,7 @@ weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 
 meals = ['breakfast', 'lunch', 'dinner']
 
-menu_dict = {weekdays[row[0]]: {meals[x[0]]:x[1] for x in enumerate(row[1])} for row in enumerate(menus)}
+menu_dict = {weekdays[row[0]]: {meals[x[0]]: x[1] for x in enumerate(row[1])} for row in enumerate(menus)}
 
 
 def main(argv):
