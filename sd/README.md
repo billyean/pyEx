@@ -8,8 +8,8 @@ List of implementation code
 * [X] [Module 5 Team Exercise](./module5)
 * [X] [Module 6 Team Exercise](./module6)
 * [ ] Module 7 Team Exercise
-* [ ] Module 8 Team Exercise
+* [ ] Module 8 Team Exercise - Midteam Exam
 * [ ] Module 9 Team Exercise
-* [X] Module 10 Team Exercise(./module10)
+* [X] [Module 10 Team Exercise](./module10)
 * [ ] Module 11 Team Exercise
 * [ ] Module 12 Team Exercise
