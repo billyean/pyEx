@@ -1,0 +1,15 @@
+2019-02-25 10:38:34.509379 Start execution
+
+Id     Days
+12345   378
+12344   393
+12343   352
+12333   310
+12322   261
+12341   219
+23432   136
+23451    46
+54321    23
+
+There are 1 people who joined before the date that the organization started operations
+Total execution takes 0.355 seconds
