@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.0, pytest-4.3.0, py-1.8.0, pluggy-0.9.0 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module10, inifile:
+collecting ... collected 1 item
+
+test_2_BCE_10_2.py::test_divide_zero PASSED                              [100%]
+
+=========================== 1 passed in 0.01 seconds ===========================

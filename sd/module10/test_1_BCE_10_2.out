@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.0, pytest-4.3.0, py-1.8.0, pluggy-0.9.0 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module10, inifile:
+collecting ... collected 6 items
+
+test_1_BCE_10_2.py::test_eq PASSED                                       [ 16%]
+test_1_BCE_10_2.py::test_condition PASSED                                [ 33%]
+test_1_BCE_10_2.py::test_less PASSED                                     [ 50%]
+test_1_BCE_10_2.py::test_eq_single[line10-line20] PASSED                 [ 66%]
+test_1_BCE_10_2.py::test_eq_single[1-1] PASSED                           [ 83%]
+test_1_BCE_10_2.py::test_eq_single[hello-hello] PASSED                   [100%]
+
+=========================== 6 passed in 0.01 seconds ===========================
