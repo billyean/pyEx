@@ -30,9 +30,6 @@ def main():
             cost_time = datetime.datetime.now() - start
             print(f'Total execution takes {cost_time.seconds}.{cost_time.microseconds} seconds', file=output_f)
 
-    span = datetime.datetime.now() - start
-    f'{span.seconds}.{span.microseconds} seconds'
-
 
 if __name__ == "__main__":
     main()
