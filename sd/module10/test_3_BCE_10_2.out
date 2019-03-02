@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.0, pytest-4.3.0, py-1.8.0, pluggy-0.9.0 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module10, inifile:
+collecting ... collected 2 items
+
+test_3_BCE_10_2.py::test_data_len PASSED                                 [ 50%]
+test_3_BCE_10_2.py::test_data_ordered PASSED                             [100%]
+
+=========================== 2 passed in 0.01 seconds ===========================

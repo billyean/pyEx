@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.0, pytest-4.3.0, py-1.8.0, pluggy-0.9.0 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module10, inifile:
+collecting ... collected 5 items
+
+test_4_BCE_10_2.py::test_supposed_failure XFAIL                          [ 20%]
+test_4_BCE_10_2.py::test PASSED                                          [ 40%]
+test_4_BCE_10_2.py::test_skip SKIPPED                                    [ 60%]
+test_4_BCE_10_2.py::test_func PASSED                                     [ 80%]
+test_4_BCE_10_2.py::test_skipif SKIPPED                                  [100%]
+
+================ 2 passed, 2 skipped, 1 xfailed in 0.09 seconds ================

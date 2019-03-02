@@ -6,3 +6,15 @@ beautifulsoup4>=4.7.1
 pyquery>=1.4.0
 tesserocr>=2.4.0
 pillow>=5.4.1
+pymysql
+pymongo
+redis
+redis-dump-load
+flask
+tornado
+pyspider=>=0.3.10
+Scrapy
+scrapy-redis
+scrapyd
+python-scrapyd-api
+scrapyrt
