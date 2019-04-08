@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module11, inifile:
+collecting ... collected 2 items
+
+test_fixtures_BCE_11_3.py::test_some_data PASSED                         [ 50%]
+test_fixtures_BCE_11_3.py::test_add_returns_valid_id PASSED              [100%]
+
+=========================== 2 passed in 0.02 seconds ===========================

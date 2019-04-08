@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module11, inifile:
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+test_fixtures_BCE_11_3.py::test_add_returns_valid_id 
+SETUP    S tmp_path_factory
+        SETUP    F tmp_path (fixtures used: tmp_path_factory)
+        SETUP    F tmpdir (fixtures used: tmp_path)
+        SETUP    F task_db (fixtures used: tmpdir)
+        test_fixtures_BCE_11_3.py::test_add_returns_valid_id (fixtures used: task_db, tmp_path, tmp_path_factory, tmpdir)PASSED
+        TEARDOWN F task_db
+        TEARDOWN F tmpdir
+        TEARDOWN F tmp_path
+TEARDOWN S tmp_path_factory
+
+==================== 1 passed, 1 deselected in 0.02 seconds ====================
