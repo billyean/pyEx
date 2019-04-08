@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module11, inifile:
+collecting ... collected 1 item
+
+test_fixtures_BCE_11_3.py::test_add_increases_count 
+SETUP    S tmp_path_factory
+        SETUP    F tmp_path (fixtures used: tmp_path_factory)
+        SETUP    F tmpdir (fixtures used: tmp_path)
+        SETUP    F task_db (fixtures used: tmpdir)
+        SETUP    F tasks_just_a_few
+        SETUP    F db_with_3_tasks (fixtures used: task_db, tasks_just_a_few)
+        test_fixtures_BCE_11_3.py::test_add_increases_count (fixtures used: db_with_3_tasks, task_db, tasks_just_a_few, tmp_path, tmp_path_factory, tmpdir)PASSED
+        TEARDOWN F db_with_3_tasks
+        TEARDOWN F tasks_just_a_few
+        TEARDOWN F task_db
+        TEARDOWN F tmpdir
+        TEARDOWN F tmp_path
+TEARDOWN S tmp_path_factory
+
+=========================== 1 passed in 0.02 seconds ===========================
