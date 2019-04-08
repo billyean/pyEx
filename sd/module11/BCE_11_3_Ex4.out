@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module11, inifile:
+collecting ... collected 1 item
+
+test_fixtures_BCE_11_3.py::test_other_data ERROR                         [100%]
+
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_other_data _______________________
+
+    @pytest.fixture()
+    def some_other_data():
+        """Raise an exception from fixture."""
+        x = 43
+>       assert x == 42
+E       assert 43 == 42
+E         -43
+E         +42
+
+test_fixtures_BCE_11_3.py:51: AssertionError
+=========================== 1 error in 0.06 seconds ============================
