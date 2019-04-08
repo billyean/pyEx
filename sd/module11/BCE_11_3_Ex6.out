@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.2.0, py-1.7.0, pluggy-0.8.1 -- /Users/h0y01c9/code/pyEx/sd/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/h0y01c9/code/pyEx/sd/module11, inifile:
+collecting ... collected 4 items
+
+test_fixtures_BCE_11_3.py::test_1 
+SETUP    S sess_scope
+    SETUP    M mod_scope
+        SETUP    F func_scope
+        test_fixtures_BCE_11_3.py::test_1 (fixtures used: func_scope, mod_scope, sess_scope)PASSED
+        TEARDOWN F func_scope
+test_fixtures_BCE_11_3.py::test_2 
+        SETUP    F func_scope
+        test_fixtures_BCE_11_3.py::test_2 (fixtures used: func_scope, mod_scope, sess_scope)PASSED
+        TEARDOWN F func_scope
+test_fixtures_BCE_11_3.py::TestSomething::test_3 
+      SETUP    C class_scope
+        test_fixtures_BCE_11_3.py::TestSomething::test_3 (fixtures used: class_scope)PASSED
+test_fixtures_BCE_11_3.py::TestSomething::test_4 
+        test_fixtures_BCE_11_3.py::TestSomething::test_4 (fixtures used: class_scope)PASSED
+      TEARDOWN C class_scope
+    TEARDOWN M mod_scope
+TEARDOWN S sess_scope
+
+=========================== 4 passed in 0.01 seconds ===========================
