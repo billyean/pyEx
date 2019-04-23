@@ -14,13 +14,13 @@ def test_some_data(some_data):
     assert some_data == 42
 
 
-@pytest.fixture()
-def task_db(tmpdir):
-    """Connect to db before tests, disconnect after."""
-    # Setup: start db
-    tasks.start_tasks_db(str(tmpdir), 'tiny')
-    yield  # this is where the testing happens
-    tasks.stop_tasks_db()
+# @pytest.fixture()
+# def task_db(tmpdir):
+#     """Connect to db before tests, disconnect after."""
+#     # Setup: start db
+#     tasks.start_tasks_db(str(tmpdir), 'tiny')
+#     yield  # this is where the testing happens
+#     tasks.stop_tasks_db()
 
 
 def test_add_returns_valid_id(task_db):
@@ -62,7 +62,7 @@ def test_other_data(some_other_data):
 # owner and done are optional
 # id is set by database
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def tasks_just_a_few():
     """All summaries and owners are unique."""
     return (
@@ -72,7 +72,7 @@ def tasks_just_a_few():
     )
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def tasks_mult_per_owner():
     """Several owners with several tasks each."""
     return (
@@ -151,3 +151,18 @@ class TestSomething ():
 
     def test_4(self):
         """Again , multiple tests are more fun."""
+
+
+@pytest.fixture(scope='session')
+def task_db_session(tmpdir):
+    """Connect to db before tests, disconnect after."""
+    # Setup: start db
+    tasks.start_tasks_db(str(tmpdir), 'tiny')
+    yield  # this is where the testing happens
+    tasks.stop_tasks_db()
+
+
+@pytest.fixture()
+def task_db(task_db_session):
+    """An empty tasks db."""
+    tasks.delete_all()

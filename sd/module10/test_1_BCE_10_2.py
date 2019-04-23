@@ -3,7 +3,6 @@ import pytest
 
 def test_eq():
     assert [1, 2, 3] == [1, 2, 3]
-    assert (1, 2, 3) == (1, 2, 3)
 
 
 def test_condition():

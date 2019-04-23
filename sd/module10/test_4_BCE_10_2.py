@@ -23,6 +23,6 @@ def test_func(*var):
     pass
 
 
-@pytest.mark.skipif(test_func_flag is None, reason="won't test test_func since it is not ready")
+@pytest.mark.skipif(test_func_flag is None, reason="won't module11 test_func since it is not ready")
 def test_skipif():
     assert test_func(3, 2, 1) == (1, 2, 3)
