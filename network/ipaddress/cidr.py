@@ -3,7 +3,12 @@ import sys
 
 class CIDR:
     """
-    A class for CIDR address calculation
+    A class for CIDR address calculation, the class will take a CIDR address string as input. The initialization of
+    the class will check:
+    1. if a given ip address is a valid address.
+    2. if given n is between 8 to 30(inclusive).
+    3. when given ip address is a B class IP address, given n must be greater than 16.
+    3. when given ip address is a C class IP address, given n must be greater than 24.
     """
     def __init__(self, cidr):
         try:
@@ -29,6 +34,8 @@ class CIDR:
     def first_last_address(self):
         """
         Calculate the first host address and last host address.
+        The code set up default network mask and hosts inside the sub network for class A address; it checks n to decide
+        if next segment of network mask or hosts need to be changed or not.
         :return: first host address and last host address by given CIDR string.
         """
         # Set mask and address for class A
@@ -52,16 +59,24 @@ class CIDR:
                 address[3] = (1 << (32 - self.n)) - 1
                 mask[3] = 255 >> (32 - self.n) << (32 - self.n)
 
+        # Simple and to calculate network address
         network_address = [self.ipv4[0] & mask[0], self.ipv4[1] & mask[1], self.ipv4[2] & mask[2],
                            self.ipv4[3] & mask[3]]
 
+        # First address will be one after network address.
         first_address = [network_address[0], network_address[1], network_address[2], network_address[3] + 1]
+        # Last address will be one before network address + hosts
         last_address = [network_address[0] + address[0], network_address[1] + address[1],
                         network_address[2] + address[2], network_address[3] + address[3] - 1]
 
         return ".".join([str(x) for x in first_address]), ".".join([str(x) for x in last_address])
 
     def valid_address(self, ip_address):
+        """
+        Simple validation of IPv4 address, first octet should be [1..224], others octet should be [0..255]
+        :param ip_address: a ipv4 address string
+        :return: true if given string is a valid ipv4 address, false otherwise.
+        """
         try:
             ipv4 = [int(x) for x in ip_address.split(".")]
             if len(ipv4) != 4:
@@ -69,6 +84,9 @@ class CIDR:
             if ipv4[0] <= 1 or ipv4[0] >= 224:
                 raise ValueError("Invalid IP address")
 
+            for index in range(1, 4):
+                if ipv4[index] <= 0 or ipv4[index] >= 255:
+                    raise ValueError("Invalid IP address")
             return ipv4
         except ValueError:
             raise ValueError("Invalid IP address")
