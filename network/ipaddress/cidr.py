@@ -2,13 +2,16 @@ import sys
 
 
 class CIDR:
+    """
+    A class for CIDR address calculation
+    """
     def __init__(self, cidr):
         try:
-            list = cidr.split("/")
-            if len(list) != 2:
+            ip_and_n = cidr.split("/")
+            if len(ip_and_n) != 2:
                 raise ValueError("Invalid CIDR address")
-            self.ipv4 = self.valid_address(list[0].strip())
-            self.n = int(list[1].strip())
+            self.ipv4 = self.valid_address(ip_and_n[0].strip())
+            self.n = int(ip_and_n[1].strip())
             if self.ipv4[0] < 128:
                 if self.n < 8 or self.n > 30:
                     raise ValueError("Invalid CIDR address")
@@ -20,10 +23,14 @@ class CIDR:
             elif self.ipv4[0] < 224:
                 if self.n < 24 or self.n > 30:
                     raise ValueError("Invalid CIDR address")
-        except:
+        except ValueError:
             raise ValueError("Invalid CIDR address")
 
     def first_last_address(self):
+        """
+        Calculate the first host address and last host address.
+        :return: first host address and last host address by given CIDR string.
+        """
         # Set mask and address for class A
         mask = [255, 0, 0, 0]
         address = [0, 255, 255, 255]
@@ -63,7 +70,7 @@ class CIDR:
                 raise ValueError("Invalid IP address")
 
             return ipv4
-        except:
+        except ValueError:
             raise ValueError("Invalid IP address")
 
     def number_of_block(self):
