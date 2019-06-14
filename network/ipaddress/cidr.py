@@ -24,27 +24,33 @@ class CIDR:
             raise ValueError("Invalid CIDR address")
 
     def first_last_address(self):
-        mask = [255, 255, 255, 255]
-        last_address = [0, 255, 255, 254]
+        # Set mask and address for class A
+        mask = [255, 0, 0, 0]
+        address = [0, 255, 255, 255]
 
         if self.n > 8:
             if self.n < 16:
-                last_address[1] = (1 << (16 - self.n)) - 1
+                address[1] = (1 << (16 - self.n)) - 1
                 mask[1] = 255 >> (16 - self.n) << (16 - self.n)
             elif self.n < 24:
-                last_address[2] = (1 << (24 - self.n)) - 1
+                mask[1] = 255
+                address[1] = 0
+                address[2] = (1 << (24 - self.n)) - 1
                 mask[2] = 255 >> (24 - self.n) << (24 - self.n)
             else:
-                last_address[3] = (1 << (32 - self.n)) - 1
+                mask[1] = 255
+                mask[2] = 255
+                address[1] = 0
+                address[2] = 0
+                address[3] = (1 << (32 - self.n)) - 1
                 mask[3] = 255 >> (32 - self.n) << (32 - self.n)
 
-        print(mask)
-
-        network_address = [self.ipv4[0] & mask[0], self.ipv4[1] & mask[1], self.ipv4[2] & mask[2], self.ipv4[3] & mask[3]]
+        network_address = [self.ipv4[0] & mask[0], self.ipv4[1] & mask[1], self.ipv4[2] & mask[2],
+                           self.ipv4[3] & mask[3]]
 
         first_address = [network_address[0], network_address[1], network_address[2], network_address[3] + 1]
-        last_address = [network_address[0] + last_address[0], network_address[1] + last_address[1], network_address[2]
-                         + last_address[2], network_address[3] + last_address[3]]
+        last_address = [network_address[0] + address[0], network_address[1] + address[1],
+                        network_address[2] + address[2], network_address[3] + address[3] - 1]
 
         return ".".join([str(x) for x in first_address]), ".".join([str(x) for x in last_address])
 
@@ -59,6 +65,9 @@ class CIDR:
             return ipv4
         except:
             raise ValueError("Invalid IP address")
+
+    def number_of_block(self):
+        return (1 << (32 - self.n)) - 2
 
 
 def main(cidr_str):
