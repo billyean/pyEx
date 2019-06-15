@@ -20,6 +20,7 @@ def test_address_range(cidr_str, expected_addresses):
 @pytest.mark.parametrize(
  'cidr_str, expected_number',
      [
+         ('10.0.0.45/8', 16777214),
          ('201.222.10.60/26', 62),
          ('201.222.10.124/26', 62),
          ('15.16.193.6/21', 2046),
