@@ -33,7 +33,7 @@ class CIDR:
 
     def first_last_address(self):
         """
-        Calculate the first host address and last host address.
+        Calculate the first usable host address and last host address in the subnet.
         The code set up default network mask and hosts inside the sub network for class A address; it checks n to decide
         if next segment of network mask or hosts need to be changed or not.
         :return: first host address and last host address by given CIDR string.
@@ -85,13 +85,16 @@ class CIDR:
                 raise ValueError("Invalid IP address")
 
             for index in range(1, 4):
-                if ipv4[index] <= 0 or ipv4[index] >= 255:
+                if ipv4[index] < 0 or ipv4[index] > 255:
                     raise ValueError("Invalid IP address")
             return ipv4
         except ValueError:
             raise ValueError("Invalid IP address")
 
     def number_of_block(self):
+        """
+        :return: number of usable hosts in the subnet.
+        """
         return (1 << (32 - self.n)) - 2
 
 
@@ -103,4 +106,10 @@ def main(cidr_str):
 
 
 if __name__ == "__main__":
+    """
+    Format:
+    python ipaddress/cidr.py {cidr address string}
+    Example:
+    python ipaddress/cidr.py "198.51.100.39/28"
+    """
     main(sys.argv[1])
