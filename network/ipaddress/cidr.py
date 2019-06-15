@@ -18,14 +18,17 @@ class CIDR:
             self.ipv4 = self.valid_address(ip_and_n[0].strip())
             self.n = int(ip_and_n[1].strip())
             if self.ipv4[0] < 128:
+                # given n should be [8,30]
                 if self.n < 8 or self.n > 30:
                     raise ValueError("Invalid CIDR address")
 
             elif self.ipv4[0] < 192:
+                # given n should be [16,30] if address is a B class address.
                 if self.n < 16 or self.n > 30:
                     raise ValueError("Invalid CIDR address")
 
             elif self.ipv4[0] < 224:
+                # given n should be [24,30] if address is a C class address.
                 if self.n < 24 or self.n > 30:
                     raise ValueError("Invalid CIDR address")
         except ValueError:
@@ -33,10 +36,10 @@ class CIDR:
 
     def first_last_address(self):
         """
-        Calculate the first usable host address and last host address in the subnet.
+        Calculate the first usable host address and last usable host address in the subnet.
         The code set up default network mask and hosts inside the sub network for class A address; it checks n to decide
         if next segment of network mask or hosts need to be changed or not.
-        :return: first host address and last host address by given CIDR string.
+        :return: first usable host address and last usable host address by given CIDR string.
         """
         # Set mask and address for class A
         mask = [255, 0, 0, 0]
