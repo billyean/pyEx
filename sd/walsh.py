@@ -26,8 +26,21 @@ def main():
             for x in matrix:
                 print(x)
 
+            if is_orthogonal(matrix):
+                print("Matrix is orthogonal")
         except ValueError as err:
             print("Please input a negative integers")
+
+
+def is_orthogonal(matrix):
+    d = matrix.shape[0]
+
+    for i in range(d):
+        for j in range(i + 1, d):
+            if np.dot(matrix[i], matrix[i + 1]) != 0:
+                return False
+
+    return True
 
 
 if __name__ == '__main__':
